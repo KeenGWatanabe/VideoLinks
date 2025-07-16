@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@microsoft/sp-http": "^1.21.1",
+    "@pnp/graph": "^4.15.0",
+    "@pnp/sp": "^4.15.0"
+  }
+}
