@@ -1,0 +1,13 @@
+{
+  "elmType": "button",
+  "txtContent": "Start",
+  "style": {
+    "background-color": "#0078d4",
+    "color": "white",
+    "border": "none",
+    "padding": "6px"
+  },
+  "customRowAction": {
+    "action": "defaultClick"
+  }
+}
