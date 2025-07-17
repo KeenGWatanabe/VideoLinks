@@ -1,5 +1,5 @@
 [
-  { "day": 1, "url": "video1.mp4" },
-  { "day": 3, "url": "video2.mp4" },
-  { "day": 5, "url": "video3.mp4" }
+  { "day": 1, "https://sascosg.sharepoint.com/:v:/r/sites/ITTeam/Shared%20Documents/IT%20Team/Videos/HowToSetupSharepoint.mp4?csf=1&web=1&e=cAf1qx": "HowToSetupSharepoint.mp4" },
+  { "day": 3, "https://sascosg.sharepoint.com/:v:/r/sites/ITTeam/Shared%20Documents/IT%20Team/Videos/Emails-AddSafeEmails.mp4?csf=1&web=1&e=I2DIGn": "Emails-AddSafeEmails.mp4" },
+  { "day": 5, "https://sascosg.sharepoint.com/:v:/r/sites/ITTeam/Shared%20Documents/IT%20Team/Videos/vpn_Checkpoint_Capsule.mp4?csf=1&web=1&e=uap1Bf": "vpn_Checkpoint_Capsule.mp4" }
 ]

@@ -144,3 +144,4 @@ __pycache__/
 *lib64/
 *bin/python
 *lib/
+local.settings.json
