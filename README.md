@@ -1,6 +1,6 @@
 Here's a **step-by-step guide** to creating and deploying your Azure Function App from **Visual Studio Code**, using a **Timer Trigger**, **Microsoft Graph API**, and **SendGrid** for email delivery.
 
----
+---a
 
 ## 🧰 Prerequisites
 Make sure you have:
