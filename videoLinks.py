@@ -4,12 +4,16 @@ import os
 
 print("🚀 Script started")
 
-client_id = '193b1b22-bf91-4ea0-97c5-a7f695c66680'
-tenant_id = '59f078e1-e31b-4c6f-a065-784102e9823d'
+client_id = os.environ["AZURE_CLIENT_ID"]  # Changed from hardcoded
+tenant_id = os.environ["AZURE_TENANT_ID"]  # Changed from hardcoded
 authority = f'https://login.microsoftonline.com/{tenant_id}'
 scopes = ['User.Read.All', 'Reports.Read.All']
 
+# Initialize MSAL client
 app = PublicClientApplication(client_id, authority=authority)
+
+print(f"✅ Config loaded - Client ID: {client_id}, Tenant: {tenant_id}")
+
 
 # 🔐 Use device code flow for WSL/fixed-terminal authentication
 flow = app.initiate_device_flow(scopes=scopes)
