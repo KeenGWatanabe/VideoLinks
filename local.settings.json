@@ -1,9 +1,0 @@
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AZURE_CLIENT_ID": "e261aaac-921d-4473-b837-13d37cc0a246",
-    "AZURE_TENANT_ID": "59f078e1-e31b-4c6f-a065-784102e9823d",
-    "AZURE_CLIENT_SECRET": "851c8bca-2860-4e67-ac64-f78b12039612",
-    "FUNCTIONS_WORKER_RUNTIME": "python"
-  }
-}
