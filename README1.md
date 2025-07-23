@@ -121,3 +121,12 @@ Would you like me to:
 1. Create a PR with these changes?
 2. Provide specific Azure deployment instructions?
 3. Help test the cleaned-up version?
+
+# Navigate to your project folder
+cd ~/Dev/VideoLinks
+
+# Activate venv (Windows)
+.\venv\Scripts\activate
+
+# Activate venv (macOS/Linux)
+source venv/bin/activate

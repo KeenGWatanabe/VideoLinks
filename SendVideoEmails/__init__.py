@@ -1,20 +1,37 @@
 import os
 import json
 import requests
+import azure.functions as func
 from sendgrid import SendGridAPIClient
 from shareplum import Site, Office365
 from azure.identity import DefaultAzureCredential
+from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
 from dotenv import load_dotenv
 
 load_dotenv() # Loads .env into os.environ
 
-# Use environment variables (NEVER hardcode secrets!)
-client_id = os.environ['AZURE_CLIENT_ID']
-tenant_id = os.environ['AZURE_TENANT_ID']
-credential = DefaultAzureCredential() 
+# Credentials Variables
+client_id = os.getenv("AZURE_CLIENT_ID")
+tenant_id = os.getenv("AZURE_TENANT_ID")
+client_secret = os.getenv("AZURE_CLIENT_SECRET")
+site_url = "https://sascosg.sharepoint.com/sites/VideoLinks"
 
+# Create SharePoint client with proper credentials
+credentials = ClientCredential(client_id, client_secret)
+ctx = ClientContext(site_url).with_credentials(credentials)
 
+# function call
+app = func.FunctionApp()
+
+@app.function_name(name="SendVideoEmails")
+@app.route(route="SendVideoEmails", auth_level=func.AuthLevel.ANONYMOUS)
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    try:
+        # Your function logic here
+        return func.HttpResponse("Email sending function triggered!")
+    except Exception as e:
+        return func.HttpResponse(f"Error: {str(e)}", status_code=500)
 
 # Connect to SharePoint
 ctx = ClientContext("https://sascosg.sharepoint.com/sites/VideoLinks").with_credentials(credential)
