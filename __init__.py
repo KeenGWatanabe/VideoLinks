@@ -3,22 +3,18 @@ import json
 import requests
 from sendgrid import SendGridAPIClient
 from shareplum import Site, Office365
-from azure.identity import ClientSecretCredential
+from azure.identity import DefaultAzureCredential
 from office365.sharepoint.client_context import ClientContext
+from dotenv import load_dotenv
 
+load_dotenv() # Loads .env into os.environ
 
 # Use environment variables (NEVER hardcode secrets!)
 client_id = os.environ['AZURE_CLIENT_ID']
 tenant_id = os.environ['AZURE_TENANT_ID']
-client_secret = os.environ['AZURE_CLIENT_SECRET']  # Or use certificate path
+credential = DefaultAzureCredential() 
 
-# Auth with client credentials
-credential = ClientSecretCredential(
-    tenant_id=tenant_id,
-    client_id=client_id,
-    client_secret=client_secret
-    # For certificates: use CertificateCredential instead
-)
+
 
 # Connect to SharePoint
 ctx = ClientContext("https://sascosg.sharepoint.com/sites/VideoLinks").with_credentials(credential)

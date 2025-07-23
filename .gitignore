@@ -145,3 +145,4 @@ __pycache__/
 *bin/python
 *lib/
 local.settings.json
+.env
