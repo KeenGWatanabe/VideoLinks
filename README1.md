@@ -66,19 +66,21 @@ VideoLinks/
    cat << EOF > functions/SendVideoEmails/__init__.py
    import os
    import json
-   from msal import ConfidentialClientApplication
+   from msal import DefaultAzureCredential
 
    def main(req):
-       client_id = os.environ["AZURE_CLIENT_ID"]
-       client_secret = os.environ["AZURE_CLIENT_SECRET"]
-       tenant_id = os.environ["AZURE_TENANT_ID"]
-       
-       app = ConfidentialClientApplication(
-           client_id,
-           authority=f"https://login.microsoftonline.com/{tenant_id}",
-           client_credential=client_secret
-       )
-       return json.dumps({"status": "success"})
+      credential = DefaultAzureCredential()
+       try:
+        token = credential.get_token("https://graph.microsoft.com/.default")
+        return json.dumps({
+            "status": "success",
+            "token_obtained": True  # Just for testing
+        })
+    except Exception as e:
+        return json.dumps({
+            "status": "error",
+            "error": str(e)
+        }), 500
    EOF
    ```
 
