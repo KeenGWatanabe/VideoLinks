@@ -1,3 +1,5 @@
+load_dotenv() # Loads .env into os.environ
+
 import os
 import json
 import requests
@@ -9,7 +11,6 @@ from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
 from dotenv import load_dotenv
 
-load_dotenv() # Loads .env into os.environ
 
 # Credentials Variables
 client_id = os.getenv("AZURE_CLIENT_ID")
