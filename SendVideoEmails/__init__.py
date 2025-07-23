@@ -1,15 +1,19 @@
+import os
+from dotenv import load_dotenv
+from office365.runtime.auth.client_credential import ClientCredential
+from office365.sharepoint.client_context import ClientContext
+
 load_dotenv() # Loads .env into os.environ
 
-import os
+
 import json
 import requests
 import azure.functions as func
 from sendgrid import SendGridAPIClient
 from shareplum import Site, Office365
 from azure.identity import DefaultAzureCredential
-from office365.runtime.auth.client_credential import ClientCredential
-from office365.sharepoint.client_context import ClientContext
-from dotenv import load_dotenv
+
+
 
 
 # Credentials Variables
